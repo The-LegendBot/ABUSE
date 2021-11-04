@@ -1,3 +1,7 @@
+# credits to userge
+# ported to LEGENDBOT by @Its_LegendBoy
+# will be adding more soon
+
 import asyncio
 import os
 import urllib
