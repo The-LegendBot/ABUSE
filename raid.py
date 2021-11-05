@@ -331,7 +331,7 @@ async def _(event):
 @bot.on(admin_cmd(pattern="raid(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="raid(?: |$)(.*)", allow_sudo=True))
 async def spam(e):  
-    if ABUSE == "ON":
+    if event.fwd_from:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
         legend = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
@@ -396,7 +396,7 @@ async def _(event):
         qeue = que.get(e)
         appendable = [e]
         qeue.append(appendable)
-        await event.edit(f"DONT BE OVERSMART. {ALIVE_NAME}")
+        await event.edit(f"Started Raid")
 
 
 @bot.on(admin_cmd(pattern="dreplyraid(?: |$)(.*)"))
